@@ -85,9 +85,12 @@ Refresh the page afterwards — the whole feature is client-side. Remove it with
 ## Verification
 
 ```sh
-node --check index.js && node --check client.js
-node tools/verify-core.mjs      # 275 assertions
+npm install                     # devDependency only (jsdom, for the DOM paths)
+npm run check
+npm test                        # 276 assertions
 ```
+
+CI (GitHub Actions) runs `npm ci`, `npm run check` and `npm test` on every push and PR.
 
 The suite covers serialization, chip addressing/insertion/removal, selection boundaries, prompt
 assembly, folding, the annotation ledger, slash-command splitting and the native-button shadow.

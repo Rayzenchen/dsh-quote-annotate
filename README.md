@@ -44,7 +44,7 @@ dsh-quote-annotate-plugin/
 ├── icon.svg             插件管理页的图标（36×36，双引号，无底图）
 ├── locale/{zh,en}.json  插件管理页的标题、说明与详情入口
 ├── docs/                插件页的详情文档（DETAIL.zh.md / DETAIL.md）
-├── tools/verify-core.mjs 275 项断言：序列化、芯片定址/增删、选区边界、插入、折叠、斜杠命令、按钮顶替
+├── tools/verify-core.mjs 276 项断言：序列化、芯片定址/增删、选区边界、插入、折叠、斜杠命令、按钮顶替
 ├── LICENSE              MIT
 ├── CHANGELOG.md         版本记录
 ├── README.en.md         英文 README
@@ -237,9 +237,12 @@ UI 侧只用公开座位与公开服务，没有改 DSH 任何源码（兼容性
 ## 验证
 
 ```sh
-node --check client.js && node --check index.js
-node tools/verify-core.mjs      # 275 项断言，全部通过
+npm install                     # 只装 devDependency（jsdom，用来模拟真实 DOM）
+npm run check                   # node --check 两个入口
+npm test                        # 276 项断言，全部通过
 ```
+
+CI（GitHub Actions）在每次 push 与 PR 上跑 `npm ci`、`npm run check`、`npm test`。
 
 图标按插件管理器的读取契约自检：`package.json` 的 `icon`（相对路径、留在包内）或
 `./icon` 导出指向 `icon.svg`；文件是自包含 SVG（36×36、无 `<text>`/`<script>`/`<style>`、

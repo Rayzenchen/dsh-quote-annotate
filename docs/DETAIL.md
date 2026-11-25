@@ -64,7 +64,7 @@ one annotated message as a smoke test.
 
 ```sh
 node --check index.js && node --check client.js
-node tools/verify-core.mjs      # 275 assertions
+node tools/verify-core.mjs      # 276 assertions
 ```
 
 ## License

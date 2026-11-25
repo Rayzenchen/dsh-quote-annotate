@@ -157,23 +157,24 @@ globalThis.window = {
 globalThis.document = documentStub
 
 /**
- * jsdom (borrowed from the DSH checkout) is used for the DOM-touching paths —
- * the sent-message fold walks real text nodes. The plugin's pure logic keeps
- * using the hand-rolled stubs above.
+ * jsdom (a devDependency) is used for the DOM-touching paths — the sent-message
+ * fold walks real text nodes. The plugin's pure logic keeps using the
+ * hand-rolled stubs above.
  */
 function loadJsdom() {
-  for (const anchor of ['/Users/wench/deepseek-harness/package.json', import.meta.url]) {
-    try {
-      const require = createRequire(anchor)
-      const mod = require('jsdom')
-      if (mod !== undefined && mod.JSDOM !== undefined) return mod.JSDOM
-    } catch {
-      // try the next anchor
-    }
+  try {
+    const require = createRequire(import.meta.url)
+    const mod = require('jsdom')
+    return mod !== undefined && mod.JSDOM !== undefined ? mod.JSDOM : null
+  } catch {
+    return null
   }
-  return null
 }
 const JSDOM = loadJsdom()
+if (JSDOM === null) {
+  console.error('缺少 devDependency `jsdom`：先在插件目录运行 `npm install`（CI 用 `npm ci`）。')
+  process.exit(1)
+}
 // Node >= 21 ships a read-only `navigator` global; the plugin only reads `language`.
 Object.defineProperty(globalThis, 'navigator', { value: { language: 'zh-CN' }, configurable: true })
 globalThis.requestAnimationFrame = () => 1
@@ -680,9 +681,8 @@ eq(
   null,
 )
 
-if (JSDOM === null) {
-  check('jsdom 可用（折叠的真实 DOM 测试）', false, '未找到 jsdom')
-} else {
+{
+  check('jsdom 可用（折叠的真实 DOM 测试）', true)
   const dom = new JSDOM(
     '<!doctype html><html><body><div data-conversation-session="s1">'
     + '<div data-chat-flow-key="user-1" data-chat-flow-kind="user">'

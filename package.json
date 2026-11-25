@@ -74,5 +74,8 @@
         "@local/dsh-copy-markdown"
       ]
     }
+  },
+  "devDependencies": {
+    "jsdom": "^29.1.1"
   }
 }

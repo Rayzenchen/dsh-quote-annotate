@@ -58,7 +58,7 @@ dsh plugin --profile <profile> add github:Rayzenchen/dsh-quote-annotate#v1.0.0
 
 ```sh
 node --check index.js && node --check client.js
-node tools/verify-core.mjs      # 275 项断言
+node tools/verify-core.mjs      # 276 项断言
 ```
 
 ## 许可证

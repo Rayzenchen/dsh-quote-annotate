@@ -17,7 +17,7 @@
 ### 兼容性
 
 - DSH `>=0.2.3-alpha.2 <0.3.0`（`engines.dsh`）；在 0.2.3-alpha.2 上验证。
-- 275 项离线断言（`node tools/verify-core.mjs`）。
+- 276 项离线断言（`node tools/verify-core.mjs`）。
 
 ### 已知限制
 
