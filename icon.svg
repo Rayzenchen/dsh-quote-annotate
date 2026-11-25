@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36">
+  <defs>
+    <linearGradient id="quote-annotate-fill" x1="10.5" y1="11" x2="26.5" y2="24" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#67C7FE"/>
+      <stop offset="1" stop-color="#3F77D8"/>
+    </linearGradient>
+  </defs>
+  <path d="M14.25 19.00 C16.62 20.04 11.02 22.84 7.94 23.40 C11.30 21.16 10.74 19.48 9.72 16.39 A4.06 4.06 0 1 1 14.25 19.00 Z" fill="url(#quote-annotate-fill)"/>
+  <path d="M23.17 19.00 C25.54 20.04 19.94 22.84 16.86 23.40 C20.22 21.16 19.66 19.48 18.64 16.39 A4.06 4.06 0 1 1 23.17 19.00 Z" fill="url(#quote-annotate-fill)"/>
+</svg>

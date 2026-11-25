@@ -1,0 +1,78 @@
+{
+  "name": "@local/dsh-quote-annotate",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "author": "Rayzenchen",
+  "description": "Select text in a conversation, add it to the composer as a quote, and attach a comment. A Codex-style response annotation for DSH.",
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "deepseek",
+    "dsh",
+    "cordis",
+    "annotation",
+    "quote",
+    "chat-ui",
+    "web-ui",
+    "plugin"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rayzenchen/dsh-quote-annotate.git"
+  },
+  "homepage": "https://github.com/Rayzenchen/dsh-quote-annotate#readme",
+  "bugs": {
+    "url": "https://github.com/Rayzenchen/dsh-quote-annotate/issues"
+  },
+  "engines": {
+    "dsh": ">=0.2.3-alpha.2 <0.3.0",
+    "node": ">=20"
+  },
+  "scripts": {
+    "check": "node --check index.js && node --check client.js",
+    "test": "node tools/verify-core.mjs"
+  },
+  "icon": "./icon.svg",
+  "meta": {
+    "title": "对话引用批注",
+    "description": "在对话里选中一段文字，浮出「添加到输入框」按钮；选中的原文作为引用芯片进入输入框，并在输入框上方生成一张批注卡，可逐条写评论；发送时按中文结构化格式交给模型。"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "tools/*.mjs",
+    "docs",
+    "icon.svg",
+    "README.md",
+    "README.en.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-conversation",
+        "@deepseek-ai/dsh-client-ui-chat",
+        "@deepseek-ai/dsh-client-ui-input-trigger",
+        "@deepseek-ai/dsh-message-quotes",
+        "@local/dsh-copy-markdown"
+      ]
+    }
+  }
+}

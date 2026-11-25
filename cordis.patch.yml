@@ -1,0 +1,7 @@
+# Bundle patch for @local/dsh-quote-annotate.
+# One Host row: the host half is inert (the feature is entirely browser-side),
+# but the row is what puts the package into the composition — and therefore
+# into the client roster that the Web shell builds from it.
+- insert:
+    - id: dsh-quote-annotate
+      name: '@local/dsh-quote-annotate'

@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "Quote & annotate",
+    "description": "Select text in the conversation, click the floating \"Add to input\" button, and the selection becomes a quote chip in the composer with a comment card above it; comments are serialized into the prompt on send. A slash command plus annotations splits into two sends with one Enter.",
+    "detail": "docs/DETAIL.md"
+  }
+}
