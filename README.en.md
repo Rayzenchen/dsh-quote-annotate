@@ -2,6 +2,8 @@
 
 [中文](README.md) | English
 
+[![verify](https://github.com/Rayzenchen/dsh-quote-annotate/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/Rayzenchen/dsh-quote-annotate/actions/workflows/ci.yml)
+
 Bring Codex Desktop's "select an answer, add it to the composer, write a comment" flow to
 DeepSeek Harness. Select a passage in the transcript, click **Add to input** next to the
 selection: the passage becomes a **quote chip** in the composer and a **comment card** appears

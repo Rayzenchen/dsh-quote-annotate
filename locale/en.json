@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Quote & annotate",
-    "description": "Select text in the conversation, click the floating \"Add to input\" button, and the selection becomes a quote chip in the composer with a comment card above it; comments are serialized into the prompt on send. A slash command plus annotations splits into two sends with one Enter.",
+    "description": "Select text in a conversation and click the \"Add to input\" button beside the selection: the passage becomes a quote chip in the composer with a comment card above it, one comment per annotation (formulas, tables and code blocks are quoted as Markdown source). On send, the plugin serializes source plus comment into one structured annotation block; a slash command and annotations split into two sends with one Enter; sent blocks fold into an expandable badge. Selections inside the composer or sidebar are left alone.",
     "detail": "docs/DETAIL.md"
   }
 }

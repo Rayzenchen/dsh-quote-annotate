@@ -2,6 +2,8 @@
 
 [English](README.en.md) | 中文
 
+[![verify](https://github.com/Rayzenchen/dsh-quote-annotate/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/Rayzenchen/dsh-quote-annotate/actions/workflows/ci.yml)
+
 把 Codex Desktop 的「选中回答文字 → 添加到输入框 → 写批注」搬到 DSH：
 在对话正文里**选中一段文字**，选区旁浮出 **添加到输入框** 按钮；点一下，这段原文就以
 **引用芯片**的形式进入输入框，同时输入框上方出现一张**批注卡**，可以为它单独写一条评论。
